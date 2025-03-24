@@ -5,6 +5,26 @@ namespace App\Models {
     /**
      * App\Models\DonationAgreement
      *
+     * @property \Illuminate\Support\Carbon|null $updated_at
+     * @property \Illuminate\Support\Carbon|null $created_at
+     * @property string|null $summary_pdf
+     * @property string|null $signed_agreement_pdf
+     * @property int|null $bank_id
+     * @property character varying(255)|null $recurring_interval
+     * @property numeric(8,2)|null $donation_amount
+     * @property character varying(255)|null $donation_type
+     * @property int $supporter_id
+     * @property int $id
+     * @method static \Illuminate\Database\Eloquent\Builder|DonationAgreement whereId($value)
+     * @method static \Illuminate\Database\Eloquent\Builder|DonationAgreement whereSupporterId($value)
+     * @method static \Illuminate\Database\Eloquent\Builder|DonationAgreement whereDonationType($value)
+     * @method static \Illuminate\Database\Eloquent\Builder|DonationAgreement whereDonationAmount($value)
+     * @method static \Illuminate\Database\Eloquent\Builder|DonationAgreement whereRecurringInterval($value)
+     * @method static \Illuminate\Database\Eloquent\Builder|DonationAgreement whereBankId($value)
+     * @method static \Illuminate\Database\Eloquent\Builder|DonationAgreement whereSignedAgreementPdf($value)
+     * @method static \Illuminate\Database\Eloquent\Builder|DonationAgreement whereSummaryPdf($value)
+     * @method static \Illuminate\Database\Eloquent\Builder|DonationAgreement whereCreatedAt($value)
+     * @method static \Illuminate\Database\Eloquent\Builder|DonationAgreement whereUpdatedAt($value)
      * @method static \Illuminate\Database\Eloquent\Builder|DonationAgreement newModelQuery()
      * @method static \Illuminate\Database\Eloquent\Builder|DonationAgreement newQuery()
      * @method static \Illuminate\Database\Eloquent\Builder|DonationAgreement query()
@@ -261,6 +281,24 @@ namespace App\Models {
     /**
      * App\Models\DonationTransaction
      *
+     * @property \Illuminate\Support\Carbon|null $updated_at
+     * @property \Illuminate\Support\Carbon|null $created_at
+     * @property character varying(255)|null $status
+     * @property timestamp(0) without time zone|null $transaction_date
+     * @property character varying(255)|null $payment_method
+     * @property numeric(8,2)|null $amount
+     * @property int|null $donation_processing_id
+     * @property int $supporter_id
+     * @property int $id
+     * @method static \Illuminate\Database\Eloquent\Builder|DonationTransaction whereId($value)
+     * @method static \Illuminate\Database\Eloquent\Builder|DonationTransaction whereSupporterId($value)
+     * @method static \Illuminate\Database\Eloquent\Builder|DonationTransaction whereDonationProcessingId($value)
+     * @method static \Illuminate\Database\Eloquent\Builder|DonationTransaction whereAmount($value)
+     * @method static \Illuminate\Database\Eloquent\Builder|DonationTransaction wherePaymentMethod($value)
+     * @method static \Illuminate\Database\Eloquent\Builder|DonationTransaction whereTransactionDate($value)
+     * @method static \Illuminate\Database\Eloquent\Builder|DonationTransaction whereStatus($value)
+     * @method static \Illuminate\Database\Eloquent\Builder|DonationTransaction whereCreatedAt($value)
+     * @method static \Illuminate\Database\Eloquent\Builder|DonationTransaction whereUpdatedAt($value)
      * @method static \Illuminate\Database\Eloquent\Builder|DonationTransaction newModelQuery()
      * @method static \Illuminate\Database\Eloquent\Builder|DonationTransaction newQuery()
      * @method static \Illuminate\Database\Eloquent\Builder|DonationTransaction query()
@@ -517,10 +555,40 @@ namespace App\Models {
     /**
      * App\Models\Supporter
      *
-     * @property-read \Illuminate\Database\Eloquent\Collection<int, \App\Models\DonationAgreement> $donationAgreements
-     * @property-read int|null $donationAgreements_count
-     * @property-read \Illuminate\Database\Eloquent\Collection<int, \App\Models\DonationTransaction> $donationTransactions
-     * @property-read int|null $donationTransactions_count
+     * @property timestamp(0) without time zone|null $deleted_at
+     * @property \Illuminate\Support\Carbon|null $updated_at
+     * @property \Illuminate\Support\Carbon|null $created_at
+     * @property string|null $photo_url
+     * @property string|null $testimonial_content
+     * @property string $bank_details
+     * @property date $start_date
+     * @property int $commit_duration
+     * @property decimal:2 $contribution_amount
+     * @property character varying(255) $support_type
+     * @property character varying(255) $email
+     * @property character varying(255) $phone_number
+     * @property string $address
+     * @property character varying(255) $gender
+     * @property int $age
+     * @property character varying(255) $name
+     * @property int $id
+     * @method static \Illuminate\Database\Eloquent\Builder|Supporter whereId($value)
+     * @method static \Illuminate\Database\Eloquent\Builder|Supporter whereName($value)
+     * @method static \Illuminate\Database\Eloquent\Builder|Supporter whereAge($value)
+     * @method static \Illuminate\Database\Eloquent\Builder|Supporter whereGender($value)
+     * @method static \Illuminate\Database\Eloquent\Builder|Supporter whereAddress($value)
+     * @method static \Illuminate\Database\Eloquent\Builder|Supporter wherePhoneNumber($value)
+     * @method static \Illuminate\Database\Eloquent\Builder|Supporter whereEmail($value)
+     * @method static \Illuminate\Database\Eloquent\Builder|Supporter whereSupportType($value)
+     * @method static \Illuminate\Database\Eloquent\Builder|Supporter whereContributionAmount($value)
+     * @method static \Illuminate\Database\Eloquent\Builder|Supporter whereCommitDuration($value)
+     * @method static \Illuminate\Database\Eloquent\Builder|Supporter whereStartDate($value)
+     * @method static \Illuminate\Database\Eloquent\Builder|Supporter whereBankDetails($value)
+     * @method static \Illuminate\Database\Eloquent\Builder|Supporter whereTestimonialContent($value)
+     * @method static \Illuminate\Database\Eloquent\Builder|Supporter wherePhotoUrl($value)
+     * @method static \Illuminate\Database\Eloquent\Builder|Supporter whereCreatedAt($value)
+     * @method static \Illuminate\Database\Eloquent\Builder|Supporter whereUpdatedAt($value)
+     * @method static \Illuminate\Database\Eloquent\Builder|Supporter whereDeletedAt($value)
      * @method static \Illuminate\Database\Eloquent\Builder|Supporter newModelQuery()
      * @method static \Illuminate\Database\Eloquent\Builder|Supporter newQuery()
      * @method static \Illuminate\Database\Eloquent\Builder|Supporter query()

@@ -9,6 +9,11 @@ class Supporter extends Model
 {
     use HasFactory;
 
+    /**
+     * The attributes that are mass assignable.
+     *
+     * @var array<int, string>
+     */
     protected $fillable = [
         'name',
         'age',
@@ -25,14 +30,15 @@ class Supporter extends Model
         'photo_url',
     ];
 
-    // Example relationships:
-    public function donationAgreements()
-    {
-        return $this->hasMany(DonationAgreement::class);
-    }
-
-    public function donationTransactions()
-    {
-        return $this->hasMany(DonationTransaction::class);
-    }
+    /**
+     * The attributes that should be cast.
+     *
+     * @var array<string, string>
+     */
+    protected $casts = [
+        'age' => 'integer',
+        'contribution_amount' => 'decimal:2',
+        'commit_duration' => 'integer',
+        'start_date' => 'date',
+    ];
 }
