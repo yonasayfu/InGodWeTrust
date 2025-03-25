@@ -5,7 +5,7 @@ import NavUser from '@/components/NavUser.vue';
 import { Sidebar, SidebarContent, SidebarFooter, SidebarHeader, SidebarMenu, SidebarMenuButton, SidebarMenuItem } from '@/components/ui/sidebar';
 import { type NavItem } from '@/types';
 import { Link } from '@inertiajs/vue3';
-import { BookOpen, Folder, LayoutGrid, Users } from 'lucide-vue-next';
+import { BookOpen, FileText, Folder, LayoutGrid, Users } from 'lucide-vue-next';
 import AppLogo from './AppLogo.vue';
 
 const mainNavItems: NavItem[] = [
@@ -18,6 +18,11 @@ const mainNavItems: NavItem[] = [
         title: 'Supporters',
         href: '/dashboard/supporters',
         icon: Users, // You can replace with an appropriate icon like Users
+    },
+    {
+        title: 'Bank Forms',
+        href: '/dashboard/bank-forms',
+        icon: FileText,  // Use an appropriate icon for Bank Forms
     },
     
 ];

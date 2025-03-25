@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Admin\SupporterController as AdminSupporterController;
+use App\Http\Controllers\Admin\BankFormsController;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 
@@ -14,18 +15,19 @@ Route::middleware(['auth', 'verified'])->group(function () {
     })->name('dashboard');
 
     Route::prefix('dashboard')->group(function () {
-        // Define print and export routes FIRST
+        // Supporters routes
         Route::get('supporters/print', [AdminSupporterController::class, 'printIndex'])
             ->name('supporters.print');
         Route::get('supporters/export', [AdminSupporterController::class, 'export'])
             ->name('supporters.export');
-        
-        // Then define the resource route
         Route::resource('supporters', AdminSupporterController::class);
-        
-        // Keep show print route after resource
         Route::get('supporters/{supporter}/print', [AdminSupporterController::class, 'printShow'])
             ->name('supporters.print-show');
+        
+        // Bank Forms routes
+        Route::resource('bank-forms', BankFormsController::class);
+        Route::get('bank-forms/{bankForm}/download', [BankFormsController::class, 'download'])
+            ->name('bank-forms.download');
     });
 });
 
