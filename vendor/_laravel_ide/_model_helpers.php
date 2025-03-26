@@ -7,7 +7,7 @@ namespace App\Models {
      *
      * @property \Illuminate\Support\Carbon|null $updated_at
      * @property \Illuminate\Support\Carbon|null $created_at
-     * @property string $form_file
+     * @property character varying(255) $form_file
      * @property character varying(255) $form_name
      * @property character varying(255) $bank_name
      * @property int $id
@@ -276,24 +276,29 @@ namespace App\Models {
      *
      * @property \Illuminate\Support\Carbon|null $updated_at
      * @property \Illuminate\Support\Carbon|null $created_at
-     * @property string|null $summary_pdf
-     * @property string|null $signed_agreement_pdf
-     * @property int|null $bank_id
+     * @property \Illuminate\Support\Carbon|null $deleted_at
+     * @property character varying(255) $summary_pdf
+     * @property character varying(255) $signed_agreement_pdf
      * @property character varying(255)|null $recurring_interval
-     * @property numeric(8,2)|null $donation_amount
-     * @property character varying(255)|null $donation_type
+     * @property numeric(10,2) $donation_amount
+     * @property character varying(255) $donation_type
+     * @property int $bank_id
      * @property int $supporter_id
      * @property int $id
+     * @property-read \App\Models\Supporter $supporter
+     * @property-read \App\Models\BankForm $bankForm
      * @method static \Illuminate\Database\Eloquent\Builder|DonationAgreement whereId($value)
      * @method static \Illuminate\Database\Eloquent\Builder|DonationAgreement whereSupporterId($value)
+     * @method static \Illuminate\Database\Eloquent\Builder|DonationAgreement whereBankId($value)
      * @method static \Illuminate\Database\Eloquent\Builder|DonationAgreement whereDonationType($value)
      * @method static \Illuminate\Database\Eloquent\Builder|DonationAgreement whereDonationAmount($value)
      * @method static \Illuminate\Database\Eloquent\Builder|DonationAgreement whereRecurringInterval($value)
-     * @method static \Illuminate\Database\Eloquent\Builder|DonationAgreement whereBankId($value)
      * @method static \Illuminate\Database\Eloquent\Builder|DonationAgreement whereSignedAgreementPdf($value)
      * @method static \Illuminate\Database\Eloquent\Builder|DonationAgreement whereSummaryPdf($value)
+     * @method static \Illuminate\Database\Eloquent\Builder|DonationAgreement whereDeletedAt($value)
      * @method static \Illuminate\Database\Eloquent\Builder|DonationAgreement whereCreatedAt($value)
      * @method static \Illuminate\Database\Eloquent\Builder|DonationAgreement whereUpdatedAt($value)
+     * @method static \Illuminate\Database\Eloquent\Builder|DonationAgreement search()
      * @method static \Illuminate\Database\Eloquent\Builder|DonationAgreement newModelQuery()
      * @method static \Illuminate\Database\Eloquent\Builder|DonationAgreement newQuery()
      * @method static \Illuminate\Database\Eloquent\Builder|DonationAgreement query()

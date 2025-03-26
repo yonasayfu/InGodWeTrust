@@ -5,7 +5,8 @@ import NavUser from '@/components/NavUser.vue';
 import { Sidebar, SidebarContent, SidebarFooter, SidebarHeader, SidebarMenu, SidebarMenuButton, SidebarMenuItem } from '@/components/ui/sidebar';
 import { type NavItem } from '@/types';
 import { Link } from '@inertiajs/vue3';
-import { BookOpen, FileText, Folder, LayoutGrid, Users } from 'lucide-vue-next';
+// Update imports at top
+import { BookOpen, FileText, Folder, LayoutGrid, Users, FileSignature } from "lucide-vue-next";
 import AppLogo from './AppLogo.vue';
 
 const mainNavItems: NavItem[] = [
@@ -24,6 +25,11 @@ const mainNavItems: NavItem[] = [
         href: '/dashboard/bank-forms',
         icon: FileText,  // Use an appropriate icon for Bank Forms
     },
+    {
+        title: "Donation Agreements",
+        href: "/dashboard/donation-agreements",
+        icon: FileSignature, // Changed to valid FileSignature icon
+    },
     
 ];
 
@@ -38,6 +44,8 @@ const footerNavItems: NavItem[] = [
         href: 'https://laravel.com/docs/starter-kits',
         icon: BookOpen,
     },
+    // Update donation agreements menu item
+    
 ];
 </script>
 
