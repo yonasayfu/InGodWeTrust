@@ -6,7 +6,7 @@ import { Sidebar, SidebarContent, SidebarFooter, SidebarHeader, SidebarMenu, Sid
 import { type NavItem } from '@/types';
 import { Link } from '@inertiajs/vue3';
 // Update imports at top
-import { BookOpen, FileText, Folder, LayoutGrid, Users, FileSignature } from "lucide-vue-next";
+import { BookOpen, FileText, Folder, LayoutGrid, Users, FileSignature, Target, ClipboardList } from "lucide-vue-next";
 import AppLogo from './AppLogo.vue';
 
 const mainNavItems: NavItem[] = [
@@ -30,6 +30,13 @@ const mainNavItems: NavItem[] = [
         href: "/dashboard/donation-agreements",
         icon: FileSignature, // Changed to valid FileSignature icon
     },
+
+    {
+        title: 'Target Donations',
+        href: '/dashboard/target-donations',
+        icon: Target, // Use an appropriate icon
+    },
+    
     
 ];
 
