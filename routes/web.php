@@ -2,7 +2,9 @@
 
 use App\Http\Controllers\Admin\SupporterController as AdminSupporterController;
 use App\Http\Controllers\Admin\BankFormsController;
+use App\Http\Controllers\Admin\DonationAgreementController;
 use App\Http\Controllers\Admin\DonationAgreementsController;
+use App\Http\Controllers\Admin\TargetDonationsController;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 
@@ -38,6 +40,15 @@ Route::middleware(['auth', 'verified'])->group(function () {
         
         Route::resource('donation-agreements', DonationAgreementsController::class)
             ->names('donation-agreements');
+        
+        // Target Donations routes
+        Route::get('target-donations/print', [TargetDonationsController::class, 'print'])
+            ->name('target-donations.print');
+        Route::get('target-donations/{targetDonation}/print', [TargetDonationsController::class, 'printShow'])
+            ->name('target-donations.print-show');
+        Route::get('target-donations/export', [TargetDonationsController::class, 'export'])
+            ->name('target-donations.export');
+        Route::resource('target-donations', TargetDonationsController::class);
     });
 });
 
